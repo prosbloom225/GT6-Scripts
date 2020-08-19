@@ -6,14 +6,6 @@ import mods.MTUtilsGT;
 import mods.appeng.Inscriber;
 
 // RoC Vars
-var impeller = <RotaryCraft:rotarycraft_item_enginecraft>;
-var compressor = <RotaryCraft:rotarycraft_item_enginecraft:1>;
-var diffuser = <RotaryCraft:rotarycraft_item_enginecraft:3>;
-var combustor = <RotaryCraft:rotarycraft_item_enginecraft:4>;
-var radiator = <RotaryCraft:rotarycraft_item_enginecraft:6>;
-var paddlePanel = <RotaryCraft:rotarycraft_item_enginecraft:13>;
-var drill = <RotaryCraft:rotarycraft_item_borecraft>;
-var pressureHead = <RotaryCraft:rotarycraft_item_borecraft:1>;
 var radarUnit = <RotaryCraft:rotarycraft_item_borecraft:2>;
 var sonarUnit = <RotaryCraft:rotarycraft_item_borecraft:3>;
 var screen = <RotaryCraft:rotarycraft_item_borecraft:5>;
@@ -21,6 +13,37 @@ var belt = <RotaryCraft:rotarycraft_item_borecraft:9>;
 
 var ammoniumNitrate = <RotaryCraft:rotarycraft_item_powders:6>;
 var bedrockAlloyIngot = <RotaryCraft:rotarycraft_item_compacts:3>;
+
+var gear02Wood = <RotaryCraft:rotarycraft_item_gearcraft:18>;
+var gear04Wood = <RotaryCraft:rotarycraft_item_gearcraft:19>;
+var gear08Wood = <RotaryCraft:rotarycraft_item_gearcraft:20>;
+var gear16Wood = <RotaryCraft:rotarycraft_item_gearcraft:21>;
+
+var gear02Stone = <RotaryCraft:rotarycraft_item_gearcraft:34>;
+var gear04Stone = <RotaryCraft:rotarycraft_item_gearcraft:35>;
+var gear08Stone = <RotaryCraft:rotarycraft_item_gearcraft:36>;
+var gear16Stone = <RotaryCraft:rotarycraft_item_gearcraft:37>;
+
+var gear02Steel = <RotaryCraft:rotarycraft_item_gearcraft:2>;
+var gear04Steel = <RotaryCraft:rotarycraft_item_gearcraft:3>;
+var gear08Steel = <RotaryCraft:rotarycraft_item_gearcraft:4>;
+var gear16Steel = <RotaryCraft:rotarycraft_item_gearcraft:5>;
+
+var gear02Titanium = <RotaryCraft:rotarycraft_item_gearcraft:114>;
+var gear04Titanium = <RotaryCraft:rotarycraft_item_gearcraft:115>;
+var gear08Titanium = <RotaryCraft:rotarycraft_item_gearcraft:116>;
+var gear16Titanium = <RotaryCraft:rotarycraft_item_gearcraft:117>;
+
+var gear02Diamond = <RotaryCraft:rotarycraft_item_gearcraft:50>;
+var gear04Diamond = <RotaryCraft:rotarycraft_item_gearcraft:51>;
+var gear08Diamond = <RotaryCraft:rotarycraft_item_gearcraft:52>;
+var gear16Diamond = <RotaryCraft:rotarycraft_item_gearcraft:53>;
+
+var gear02Bedrock = <RotaryCraft:rotarycraft_item_gearcraft:66>;
+var gear04Bedrock = <RotaryCraft:rotarycraft_item_gearcraft:67>;
+var gear08Bedrock = <RotaryCraft:rotarycraft_item_gearcraft:68>;
+var gear16Bedrock = <RotaryCraft:rotarycraft_item_gearcraft:69>;
+
 var tungstenAlloyShaftCore = <RotaryCraft:rotarycraft_item_gearcraft:119>;
 var heatRayBarrel = <RotaryCraft:rotarycraft_item_misccraft>;
 var heatRayCore = <RotaryCraft:rotarycraft_item_misccraft:3>;
@@ -40,6 +63,7 @@ var drain = <gregtech:gt.multiitem.technological:1020>;
 var spikesSteel = <gregtech:gt.block.spikes.sharp>;
 var logisticsWire = <gregtech:gt.multitileentity:24901>;
 var solarPanel = <gregtech:gt.multitileentity:10050>;
+var coverMachineStatus = <gregtech:gt.multiitem.technological:1002>;
 
 // tiered items
 var steamEngineSteel = <gregtech:gt.multitileentity:1304>;
@@ -186,6 +210,14 @@ NEI.hide(<RotaryCraft:rotarycraft_item_flamethrower:32000>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:88>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:89>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:106>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:1>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:17>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:33>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:49>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:65>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:113>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:1>);
+
 
 
 
@@ -212,6 +244,85 @@ NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "rc jet fuel", fue
 NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "rc ethanol", fuel: 16000}));
 NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "bioethanol", fuel: 16000}));
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:115>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:2>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:3>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:4>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:5>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:6>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:7>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:8>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:9>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:11>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:12>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:13>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:14>);
+NEI.hide(<RotaryCraft:rotarycraft_item_shaftcraft:15>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:16>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:6>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:7>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:22>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:23>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:32>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:38>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:39>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:48>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:54>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:55>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:64>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:70>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:112>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:118>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:119>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:1>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:2>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:3>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:4>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:5>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:6>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:7>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:9>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:10>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:11>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:12>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:13>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:14>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:15>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:16>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:17>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:18>);
+NEI.hide(<RotaryCraft:rotarycraft_item_enginecraft:19>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:1>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:2>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:4>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:6>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:7>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:8>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:9>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:10>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:11>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:12>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:13>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:14>);
+NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:15>);
+
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:1>);
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:4>);
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:6>);
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:7>);
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:10>);
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:11>);
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:12>);
+
+
+
 
 
 // --- Removing Recipe Handlers ---
@@ -244,12 +355,12 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_motion:32000>, [[null, sonarUnit
 [null, <ore:ingotStainlessSteel>, null]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_vacuum:32000>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_vacuum:32000>, [[null, diffuser, null], 
-[<ore:ingotStainlessSteel>, impeller, <ore:ingotStainlessSteel>], 
+recipes.addShaped(<RotaryCraft:rotarycraft_item_vacuum:32000>, [[null, <ore:plateCurvedSteel>, null], 
+[<ore:ingotStainlessSteel>, <ore:gearGtSteel>, <ore:ingotStainlessSteel>], 
 [null, <ore:ingotStainlessSteel>, null]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_stungun:32000>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_stungun:32000>, [[null, diffuser, null], 
+recipes.addShaped(<RotaryCraft:rotarycraft_item_stungun:32000>, [[null, <ore:plateCurvedSteel>, null], 
 [<ore:ingotStainlessSteel>, sonarUnit, <ore:ingotStainlessSteel>], 
 [null, <ore:ingotStainlessSteel>, null]]);
 
@@ -260,7 +371,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_gravelgun:32000>, [[null, <minec
 
 recipes.remove(<RotaryCraft:rotarycraft_item_fireball:31994>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_fireball:31994>, [[<ore:itemBlazeRod>, null, <ore:itemBlazeRod>], 
-[<ore:ingotTitanium>, combustor, <ore:ingotTitanium>], 
+[<ore:ingotTitanium>, <minecraft:fire_charge>, <ore:ingotTitanium>], 
 [<ore:ingotTitanium>, <ore:dustRedstone>, <ore:ingotTitanium>]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_nvg:8192>);
@@ -332,13 +443,13 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_strongcoil>, [[<ore:ingotHSLASpr
 [<ore:ingotHSLASpringSteel>, <ore:gemDiamond>, <ore:ingotHSLASpringSteel>]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_jetpack>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_jetpack>, [[combustor, drumTitanium, combustor], 
-[compressor, <ore:circuitElite>, compressor], 
-[diffuser, boilerStrongTitanium, diffuser]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_jetpack>, [[<minecraft:fire_charge>, drumTitanium, <minecraft:fire_charge>], 
+[<ore:gear>, <ore:circuitElite>, <ore:gearGtSteel>], 
+[<ore:plateCurvedSteel>, boilerStrongTitanium, <ore:plateCurvedSteel>]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_pump:32000>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_pump:32000>, [[null, <ore:ingotStainlessSteel>, <ore:pipeMediumStainlessSteel>], 
-[<ore:ingotStainlessSteel>, impeller, <ore:ingotStainlessSteel>], 
+[<ore:ingotStainlessSteel>, <ore:gearGtSteel>, <ore:ingotStainlessSteel>], 
 [<ore:ingotStainlessSteel>, drumStainlessSteel, <ore:ingotStainlessSteel>]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_jump>);
@@ -373,7 +484,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_bedshears>, [[null, bedrockAlloy
 [null, null, null]]);
 
 recipes.remove(<RotaryCraft:rotarycraft_item_upgrade>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_upgrade>, [[<ore:ingotIron>, radiator, <ore:ingotIron>], 
+recipes.addShaped(<RotaryCraft:rotarycraft_item_upgrade>, [[<ore:ingotIron>, <ore:plateSteel>, <ore:ingotIron>], 
 [<ore:ingotGold>, <ore:circuitBasic>, <ore:ingotGold>], 
 [<ore:ingotIron>, motorLv, <ore:ingotIron>]]);
 
@@ -448,7 +559,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:6>, [[<ore:ingotSteel>, 
 
 // fermenter
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:7>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:7>, [[<ore:ingotSteelGalvanized>, impeller, <ore:ingotSteelGalvanized>], 
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:7>, [[<ore:ingotSteelGalvanized>, <ore:gearGtSteel>, <ore:ingotSteelGalvanized>], 
 [conveyorLv, fermenter, conveyorLv], 
 [<ore:plateSteelGalvanized>, motorLv, <ore:plateSteelGalvanized>]]);
 
@@ -577,7 +688,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:27>, [[<ore:ingotStainle
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:28>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:28>, [[motorMv, motorMv, motorMv], 
 [conveyorMv, <ore:casingMachineAluminium>, conveyorMv], 
-[<ore:plateAluminium>, drill, <ore:plateAluminium>]]);
+[<ore:plateAluminium>, <ore:craftingToolMiningDrill>, <ore:plateAluminium>]]);
 
 // item vacuum
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:29>);
@@ -619,7 +730,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:34>, [[<ore:dyeBlue>, ra
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:35>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:35>, [[<ore:ingotCopper>, <ore:barsIron>, <ore:ingotCopper>], 
 [<ore:plateAluminium>, <ore:casingMachineAluminium>, <ore:plateAluminium>], 
-[<minecraft:obsidian>, combustor, <minecraft:obsidian>]]);
+[<minecraft:obsidian>, <minecraft:fire_charge>, <minecraft:obsidian>]]);
 
 // bait box
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:36>);
@@ -661,7 +772,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:41>, [[null, <ore:ingotS
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:43>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:43>, [[<ore:ingotAluminium>, <ore:blockRedstone>, <ore:circuitElite>], 
 [<ore:plateAluminium>, <ore:circuitElite>, <ore:plateAluminium>], 
-[<ore:plateAluminium>, compressor, <ore:chest>]]);
+[<ore:plateAluminium>, <ore:gearGtSteel>, <ore:chest>]]);
 
 // sonic weapon
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:44>);
@@ -744,7 +855,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:58>, [[logisticsWire, lo
 // firestarter
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:59>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:59>, [[<minecraft:obsidian>, <ore:ingotGold>, <minecraft:obsidian>], 
-[<ore:ingotGold>, combustor, <ore:ingotGold>], 
+[<ore:ingotGold>, <minecraft:fire_charge>, <ore:ingotGold>], 
 [<minecraft:obsidian>, igniterLv, <minecraft:obsidian>]]);
 
 // magnetizing unit
@@ -1196,9 +1307,9 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:5>, [[drumTitanium, motor
 
 // hydrokinetic engine
 recipes.remove(<RotaryCraft:rotarycraft_item_engine:6>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:6>, [[paddlePanel, paddlePanel, paddlePanel], 
-[paddlePanel, motorIv, paddlePanel],
-[paddlePanel, paddlePanel, paddlePanel]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:6>, [[<ore:plateDenseHSLASpringSteel>, <ore:plateDenseHSLASpringSteel>, <ore:plateDenseHSLASpringSteel>], 
+[<ore:plateDenseHSLASpringSteel>, motorIv, <ore:plateDenseHSLASpringSteel>],
+[<ore:plateDenseHSLASpringSteel>, <ore:plateDenseHSLASpringSteel>, <ore:plateDenseHSLASpringSteel>]]);
 
 // microturbine
 recipes.remove(<RotaryCraft:rotarycraft_item_engine:7>);
@@ -1211,6 +1322,351 @@ recipes.remove(<RotaryCraft:rotarycraft_item_engine:8>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:8>, [[<ore:wireGt08Superconductor>, <ore:gearGtOsmiridium>, <ore:wireGt08Superconductor>], 
 [motorZpm, <ore:gearGtGraphene>, motorZpm],
 [pumpZpm, <ore:casingMachineOsmium>, pumpZpm]]);
+
+
+// --- Shafts ---
+recipes.remove(<RotaryCraft:rotarycraft_item_shaft>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_shaft>, [[<ore:plankTreatedWood>, <ore:stickTreatedWood>, <ore:plankTreatedWood>], 
+[<ore:plankTreatedWood>, <ore:plankTreatedWood>, <ore:plankTreatedWood>],
+[null, null, null]]);
+
+recipes.remove(<RotaryCraft:rotarycraft_item_shaft:1>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_shaft:1>, [[<ore:slabStone>, <ore:stickStone>, <ore:slabStone>], 
+[<ore:slabStone>, <ore:slabStone>, <ore:slabStone>],
+[null, null, null]]);
+
+recipes.remove(<RotaryCraft:rotarycraft_item_shaft:2>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_shaft:2>, [[<ore:stickSteel>, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+recipes.remove(<RotaryCraft:rotarycraft_item_shaft:3>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_shaft:3>, [[<ore:stickTungstenSteel>, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+recipes.remove(<RotaryCraft:rotarycraft_item_shaft:4>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_shaft:4>, [[<ore:stickDiamond>, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+recipes.remove(<RotaryCraft:rotarycraft_item_shaft:5>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_shaft:5>, [[<ore:stickBedrock>, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+// --- Gears ---
+NEI.overrideName(gear02Steel, "Steel 2x Gear Unit");
+NEI.overrideName(gear04Steel, "Steel 4x Gear Unit");
+NEI.overrideName(gear08Steel, "Steel 8x Gear Unit");
+NEI.overrideName(gear16Steel, "Steel 16x Gear Unit");
+NEI.overrideName(gear02Titanium, "Titanium 2x Gear Unit");
+NEI.overrideName(gear04Titanium, "Titanium 4x Gear Unit");
+NEI.overrideName(gear08Titanium, "Titanium 8x Gear Unit");
+NEI.overrideName(gear16Titanium, "Titanium 16x Gear Unit");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "STEEL"}), "Steel 2:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "STEEL"}), "Steel 4:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "STEEL"}), "Steel 8:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "STEEL"}), "Steel 16:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "TUNGSTEN"}), "Titanium 2:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "TUNGSTEN"}), "Titanium 4:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "TUNGSTEN"}), "Titanium 8:1 Gearbox");
+NEI.overrideName(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "TUNGSTEN"}), "Titanium 16:1 Gearbox");
+
+// wood
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "WOOD"}), [[<ore:plankTreatedWood>, gear02Wood, <ore:plankTreatedWood>], 
+[<ore:plankTreatedWood>, <ore:plankTreatedWood>, <ore:plankTreatedWood>],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "WOOD"}), [[<ore:plankTreatedWood>, gear04Wood, <ore:plankTreatedWood>], 
+[<ore:plankTreatedWood>, <ore:plankTreatedWood>, <ore:plankTreatedWood>],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "WOOD"}), [[<ore:plankTreatedWood>, gear08Wood, <ore:plankTreatedWood>], 
+[<ore:plankTreatedWood>, <ore:plankTreatedWood>, <ore:plankTreatedWood>],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "WOOD"}), [[<ore:plankTreatedWood>, gear16Wood, <ore:plankTreatedWood>], 
+[<ore:plankTreatedWood>, <ore:plankTreatedWood>, <ore:plankTreatedWood>],
+[null, null, null]]);
+
+// stone
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "STONE"}), [[<ore:slabStone>, gear02Stone, <ore:slabStone>], 
+[<ore:slabStone>, <ore:slabStone>, <ore:slabStone>],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "STONE"}), [[<ore:slabStone>, gear04Stone, <ore:slabStone>], 
+[<ore:slabStone>, <ore:slabStone>, <ore:slabStone>],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "STONE"}), [[<ore:slabStone>, gear08Stone, <ore:slabStone>], 
+[<ore:slabStone>, <ore:slabStone>, <ore:slabStone>],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "STONE"}), [[<ore:slabStone>, gear16Stone, <ore:slabStone>], 
+[<ore:slabStone>, <ore:slabStone>, <ore:slabStone>],
+[null, null, null]]);
+
+// steel
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "STEEL"}), [[gear02Steel, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "STEEL"}), [[gear04Steel, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "STEEL"}), [[gear08Steel, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "STEEL"}), [[gear16Steel, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+// titanium
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "TUNGSTEN"}), [[gear02Titanium, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "TUNGSTEN"}), [[gear04Titanium, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "TUNGSTEN"}), [[gear08Titanium, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "TUNGSTEN"}), [[gear16Titanium, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+// diamond
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "DIAMOND"}), [[gear02Diamond, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "DIAMOND"}), [[gear04Diamond, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "DIAMOND"}), [[gear08Diamond, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "DIAMOND"}), [[gear16Diamond, null, null], 
+[<ore:casingMachineSteel>, null, <ore:slabStone>],
+[null, null, null]]);
+
+// bedrock
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox>.withTag({type: "BEDROCK"}), [[gear02Bedrock, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:1>.withTag({type: "BEDROCK"}), [[gear04Bedrock, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:2>.withTag({type: "BEDROCK"}), [[gear08Bedrock, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearbox:3>.withTag({type: "BEDROCK"}), [[gear16Bedrock, null, null], 
+[<ore:casingMachineSteel>, null, null],
+[null, null, null]]);
+
+// flywheels
+recipes.remove(<RotaryCraft:rotarycraft_item_flywheel>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_flywheel>, [[null, <ore:gearGtAnyTreatedWood>, null], 
+[null, <ore:casingMachineSteel>, null],
+[null, null, null]]);
+recipes.remove(<RotaryCraft:rotarycraft_item_flywheel:1>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_flywheel:1>, [[null, <ore:gearGtStone>, null], 
+[null, <ore:casingMachineSteel>, null],
+[null, null, null]]);
+recipes.remove(<RotaryCraft:rotarycraft_item_flywheel:2>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_flywheel:2>, [[null, <ore:gearGtSteel>, null], 
+[null, <ore:casingMachineSteel>, null],
+[null, null, null]]);
+recipes.remove(<RotaryCraft:rotarycraft_item_flywheel:3>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_flywheel:3>, [[null, <ore:gearGtGold>, null], 
+[null, <ore:casingMachineSteel>, null],
+[null, null, null]]);
+
+// worm gear
+recipes.remove(<RotaryCraft:rotarycraft_item_advgear>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_advgear>, [[<ore:stickLongSteel>, <ore:gearGtSteel>, null], 
+[null, <ore:gearGtSteel>, <ore:stickLongSteel>],
+[null, <ore:casingMachineSteel>, null]]);
+
+// cvt unit
+recipes.remove(<RotaryCraft:rotarycraft_item_advgear:1>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_advgear:1>, [[<ore:gearGtDiamond>, <ore:stickLongBedrock>, <ore:gearGtDiamond>], 
+[<ore:gearGtDiamond>, <ore:stickLongBedrock>, <ore:gearGtDiamond>],
+[<ore:circuitElite>, <ore:casingMachineIridium>, screen]]);
+
+// industrial coil
+recipes.remove(<RotaryCraft:rotarycraft_item_advgear:2>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_advgear:2>, [[null, null, null], 
+[<ore:gearGtBedrock>, <ore:springDiamond>, <ore:stickLongBedrock>],
+[null, <ore:casingIridium>, null]]);
+
+// high-ratio gear
+recipes.remove(<RotaryCraft:rotarycraft_item_advgear:3>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_advgear:1>, [[<ore:stickLongBedrock>, gear16Bedrock, <ore:stickLongBedrock>], 
+[<ore:stickLongBedrock>, gear16Bedrock, <ore:stickLongBedrock>],
+[<ore:gearGtTitanium>, <ore:casingMachineIridium>, <ore:gearGtTitanium>]]);
+
+//gear components
+//wood
+recipes.remove(gear02Wood);
+recipes.addShaped(gear02Wood, [[null, <ore:gearGtAnyTreatedWood>, <ore:stickWood>], 
+[<ore:stickWood>, <ore:gearGtAnyTreatedWood>, null],
+[null, null, null]]);
+
+//stone
+recipes.remove(gear02Stone);
+recipes.addShaped(gear02Stone, [[null, <ore:gearGtStone>, <ore:stickStone>], 
+[<ore:stickStone>, <ore:gearGtStone>, null],
+[null, null, null]]);
+recipes.remove(gear04Stone);
+recipes.addShaped(gear04Stone, [[null, gear02Stone, <ore:stickStone>], 
+[<ore:stickStone>, gear02Stone, null],
+[null, null, null]]);
+recipes.remove(gear08Stone);
+recipes.addShaped(gear08Stone, [[null, gear04Stone, <ore:stickStone>], 
+[<ore:stickStone>, gear02Stone, null],
+[null, null, null]]);
+recipes.remove(gear16Stone);
+recipes.addShaped(gear16Stone, [[null, gear08Stone, <ore:stickStone>], 
+[<ore:stickStone>, gear02Stone, null],
+[null, null, null]]);
+//steel
+recipes.remove(gear02Steel);
+recipes.addShaped(gear02Steel, [[null, <ore:gearGtSteel>, <ore:stickSteel>], 
+[<ore:stickSteel>, <ore:gearGtSteel>, null],
+[null, null, null]]);
+recipes.remove(gear04Steel);
+recipes.addShaped(gear04Steel, [[null, gear02Steel, <ore:stickSteel>], 
+[<ore:stickSteel>, gear02Steel, null],
+[null, null, null]]);
+recipes.remove(gear08Steel);
+recipes.addShaped(gear08Steel, [[null, gear04Steel, <ore:stickSteel>], 
+[<ore:stickSteel>, gear02Steel, null],
+[null, null, null]]);
+recipes.remove(gear16Steel);
+recipes.addShaped(gear16Steel, [[null, gear08Steel, <ore:stickSteel>], 
+[<ore:stickSteel>, gear02Steel, null],
+[null, null, null]]);
+//titanium
+recipes.remove(gear02Titanium);
+recipes.addShaped(gear02Titanium, [[null, <ore:gearGtTitanium>, <ore:stickTitanium>], 
+[<ore:stickTitanium>, <ore:gearGtTitanium>, null],
+[null, null, null]]);
+recipes.remove(gear04Titanium);
+recipes.addShaped(gear04Titanium, [[null, gear02Titanium, <ore:stickTitanium>], 
+[<ore:stickTitanium>, gear02Titanium, null],
+[null, null, null]]);
+recipes.remove(gear08Titanium);
+recipes.addShaped(gear08Titanium, [[null, gear04Titanium, <ore:stickTitanium>], 
+[<ore:stickTitanium>, gear02Titanium, null],
+[null, null, null]]);
+recipes.remove(gear16Titanium);
+recipes.addShaped(gear16Titanium, [[null, gear08Titanium, <ore:stickTitanium>], 
+[<ore:stickTitanium>, gear02Titanium, null],
+[null, null, null]]);
+
+//diamond
+recipes.remove(gear02Diamond);
+recipes.addShaped(gear02Diamond, [[null, <ore:gearGtDiamond>, <ore:stickDiamond>], 
+[<ore:stickDiamond>, <ore:gearGtDiamond>, null],
+[null, null, null]]);
+recipes.remove(gear04Diamond);
+recipes.addShaped(gear04Diamond, [[null, gear02Diamond, <ore:stickDiamond>], 
+[<ore:stickDiamond>, gear02Diamond, null],
+[null, null, null]]);
+recipes.remove(gear08Diamond);
+recipes.addShaped(gear08Diamond, [[null, gear04Diamond, <ore:stickDiamond>], 
+[<ore:stickDiamond>, gear02Diamond, null],
+[null, null, null]]);
+recipes.remove(gear16Diamond);
+recipes.addShaped(gear16Diamond, [[null, gear08Diamond, <ore:stickDiamond>], 
+[<ore:stickDiamond>, gear02Diamond, null],
+[null, null, null]]);
+
+//bedrock
+recipes.remove(gear02Bedrock);
+recipes.addShaped(gear02Bedrock, [[null, <ore:gearGtBedrock>, <ore:stickBedrock>], 
+[<ore:stickBedrock>, <ore:gearGtBedrock>, null],
+[null, null, null]]);
+recipes.remove(gear04Bedrock);
+recipes.addShaped(gear04Bedrock, [[null, gear02Bedrock, <ore:stickBedrock>], 
+[<ore:stickBedrock>, gear02Bedrock, null],
+[null, null, null]]);
+recipes.remove(gear08Bedrock);
+recipes.addShaped(gear08Bedrock, [[null, gear04Bedrock, <ore:stickBedrock>], 
+[<ore:stickBedrock>, gear02Bedrock, null],
+[null, null, null]]);
+recipes.remove(gear16Bedrock);
+recipes.addShaped(gear16Bedrock, [[null, gear08Bedrock, <ore:stickBedrock>], 
+[<ore:stickBedrock>, gear02Bedrock, null],
+[null, null, null]]);
+
+// --- Components ---
+
+// heat ray barrel
+recipes.remove(<RotaryCraft:rotarycraft_item_misccraft>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_misccraft>, [[<minecraft:obsidian>, <minecraft:obsidian>, <minecraft:obsidian>], 
+[<ore:glowstone>, <ore:ingotTitanium>, <ore:glassHardened>],
+[<minecraft:obsidian>, <minecraft:obsidian>, <minecraft:obsidian>]]);
+
+// propeller blade
+recipes.remove(<RotaryCraft:rotarycraft_item_misccraft:5>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_misccraft:5>, [[null, <ore:stickStainlessSteel>, null], 
+[null, <ore:ingotStainlessSteel>, null],
+[null, <ore:plateStainlessSteel>, null]]);
+
+// radar unit
+recipes.remove(<RotaryCraft:rotarycraft_item_borecraft:2>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_borecraft:2>, [[<ore:ingotCopper>, <ore:ingotCopper>, <ore:ingotCopper>], 
+[null, <ore:ingotGold>, null],
+[null, <RotaryCraft:rotarycraft_item_engine>, null]]);
+
+// sonar unit
+recipes.remove(<RotaryCraft:rotarycraft_item_borecraft:3>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_borecraft:3>, [[null, <ore:ingotSteel>, null], 
+[<ore:ingotSteel>, <minecraft:noteblock>, <ore:ingotSteel>],
+[<ore:dustRedstone>, <ore:circuitBasic>, <ore:dustRedstone>]]);
+
+// screen
+recipes.remove(<RotaryCraft:rotarycraft_item_borecraft:5>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_borecraft:5>, [[<ore:ingotStainlessSteel>, <ore:paneGlass>, <ore:ingotStainlessSteel>], 
+[<ore:ingotStainlessSteel>, coverMachineStatus, <ore:ingotStainlessSteel>],
+[null, null, null]]);
+
+// belt
+recipes.remove(<RotaryCraft:rotarycraft_item_borecraft:9>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_borecraft:9>, [[<ore:leather>, <ore:leather>, <ore:leather>], 
+[<ore:leather>, <ore:ingotSteel>, <ore:leather>],
+[<ore:leather>, <ore:leather>, <ore:leather>]]);
+
+// --- Misc ---
+
+// range finder
+recipes.remove(<RotaryCraft:rotarycraft_item_rangefinder:32000>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_rangefinder:32000>, [[null, <minecraft:ender_pearl>, null], 
+[<ore:dustRedstone>, <ore:glowstone>, <ore:dustRedstone>],
+[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>]]);
+
+// integrated gearbox upgrade
+recipes.remove(<RotaryCraft:rotarycraft_item_gearupgrade>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_gearupgrade>, [[<ore:stickBedrock>, <ore:ingotStainlessSteel>, <ore:ingotStainlessSteel>], 
+[<ore:ingotStainlessSteel>, <ore:stickBedrock>, <ore:ingotStainlessSteel>],
+[<ore:ingotStainlessSteel>, <ore:ingotStainlessSteel>, <ore:circuitElite>]]);
+
+// handheld piston
+recipes.remove(<RotaryCraft:rotarycraft_item_heldpiston:32000>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_heldpiston:32000>, [[null, <ore:ingotStainlessSteel>, <minecraft:piston>], 
+[<ore:ingotStainlessSteel>, motorHv, <ore:ingotStainlessSteel>],
+[<ore:dustGlowstone>, <ore:ingotStainlessSteel>, null]]);
+
+// bedrock grafter
+recipes.remove(<RotaryCraft:rotarycraft_item_bedgrafter>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_bedgrafter>, [[null, null, bedrockAlloyIngot], 
+[null, <ore:stickBedrock>, null],
+[<ore:stickBedrock>, null, null]]);
+
+// spring-powered grafter
+recipes.remove(<RotaryCraft:rotarycraft_item_grafter:32000>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_bedgrafter>, [[null, null, <ore:ingotStainlessSteel>], 
+[<ore:ingotStainlessSteel>, <ore:stickWood>, null],
+[motorHv, <ore:ingotStainlessSteel>, null]]);
+
+
+
+
 
 
 // --- Dryer --- 
