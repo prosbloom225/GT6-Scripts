@@ -11,11 +11,13 @@ var compressor = <RotaryCraft:rotarycraft_item_enginecraft:1>;
 var diffuser = <RotaryCraft:rotarycraft_item_enginecraft:3>;
 var combustor = <RotaryCraft:rotarycraft_item_enginecraft:4>;
 var radiator = <RotaryCraft:rotarycraft_item_enginecraft:6>;
+var paddlePanel = <RotaryCraft:rotarycraft_item_enginecraft:13>;
 var drill = <RotaryCraft:rotarycraft_item_borecraft>;
 var pressureHead = <RotaryCraft:rotarycraft_item_borecraft:1>;
 var radarUnit = <RotaryCraft:rotarycraft_item_borecraft:2>;
 var sonarUnit = <RotaryCraft:rotarycraft_item_borecraft:3>;
 var screen = <RotaryCraft:rotarycraft_item_borecraft:5>;
+var belt = <RotaryCraft:rotarycraft_item_borecraft:9>;
 
 var ammoniumNitrate = <RotaryCraft:rotarycraft_item_powders:6>;
 var bedrockAlloyIngot = <RotaryCraft:rotarycraft_item_compacts:3>;
@@ -30,8 +32,6 @@ var boilerStrongTitanium = <gregtech:gt.multitileentity:1256>;
 var drumStainlessSteel = <gregtech:gt.multitileentity:32716>;
 var drumTitanium = <gregtech:gt.multitileentity:32742>;
 
-var igniterLv = <gregtech:gt.multitileentity:15011>;
-
 var blueprint = <gregtech:gt.multiitem.randomtools:7011>;
 var bedrockMiningDrillHead = <gregtech:gt.multitileentity:18103>;
 var bedrockMiningDrillController = <gregtech:gt.multitileentity:17999>;
@@ -41,16 +41,28 @@ var spikesSteel = <gregtech:gt.block.spikes.sharp>;
 var logisticsWire = <gregtech:gt.multitileentity:24901>;
 var solarPanel = <gregtech:gt.multitileentity:10050>;
 
+// tiered items
+var steamEngineSteel = <gregtech:gt.multitileentity:1304>;
 var laserEmitterArgon = <gregtech:gt.multiitem.technological:11003>;
 var laserEmitterCarbonDioxide = <gregtech:gt.multiitem.technological:11008>;
 var coilLargeCopper = <gregtech:gt.multitileentity:18040>;
 var coilLargeNichrome = <gregtech:gt.multitileentity:18042>;
 var coilLargeSuperconductor = <gregtech:gt.multitileentity:18046>;
-
+var basinSteel = <gregtech:gt.multitileentity:1772>;
+var basinStainlessSteel = <gregtech:gt.multitileentity:1775>;
+var crucibleLargeTitanium = <gregtech:gt.multitileentity:17306>;
+var smelterTitanium = <gregtech:gt.multitileentity:20243>;
+var burningBoxTitanium = <gregtech:gt.multitileentity:1106>;
+var thermoelectricCoolerHv = <gregtech:gt.multitileentity:10163>;
+var freezerHv = <gregtech:gt.multitileentity:20563>;
 var fluxDynamoEv = <gregtech:gt.multitileentity:10114>;
-
 var fluxMotorElectrum = <gregtech:gt.multitileentity:11023>;
+var autocrafterEv = <gregtech:gt.multitileentity:20344>;
+var igniterLv = <gregtech:gt.multitileentity:15011>;
+var igniterHv = <gregtech:gt.multitileentity:15013>;
+var igniterIv = <gregtech:gt.multitileentity:15015>;
 
+// components
 var crystalProcessorDiamond = <gregtech:gt.multiitem.technological:30501>;
 var crystalProcessorRuby = <gregtech:gt.multiitem.technological:30502>;
 var crystalProcessorEmerald = <gregtech:gt.multiitem.technological:30503>;
@@ -147,7 +159,7 @@ var sensorPuV1 = <gregtech:gt.multiitem.technological:12149>;
 
 
 
-// --- Hiding Items ---
+// --- Disables ---
 // TODO - dev tools
 //NEI.hide(<RotaryCraft:rotarycraft_item_worldedit>);
 //NEI.hide(<RotaryCraft:rotarycraft_item_debug>);
@@ -173,6 +185,7 @@ NEI.hide(<RotaryCraft:rotarycraft_item_steelsickle>);
 NEI.hide(<RotaryCraft:rotarycraft_item_flamethrower:32000>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:88>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:89>);
+NEI.hide(<RotaryCraft:rotarycraft_item_machine:106>);
 
 
 
@@ -198,6 +211,7 @@ NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "fuel", fuel: 1600
 NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "rc jet fuel", fuel: 16000}));
 NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "rc ethanol", fuel: 16000}));
 NEI.hide(<RotaryCraft:rotarycraft_item_fuel>.withTag({liquid: "bioethanol", fuel: 16000}));
+NEI.hide(<RotaryCraft:rotarycraft_item_machine:115>);
 
 
 // --- Removing Recipe Handlers ---
@@ -579,8 +593,8 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:30>, [[<ore:ingotAlumini
 
 // sprinkler
 recipes.remove(<RotaryCraft:rotarycraft_item_machine:31>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:31>, [[null, <ore:ingotAluminium>, null], 
-[null, <RotaryCraft:rotarycraft_item_machine:17>, null], 
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:31>, [[null, motorMv, null], 
+[<ore:craftingToolWrench>, <ore:pipeMediumSteelGalvanized>, <ore:craftingToolHardHammer>], 
 [null, <ore:rotorAluminium>, null]]);
 
 // woodcutter
@@ -918,17 +932,285 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:96> *3, [[<ore:blockLapi
 [<ore:pipeMediumStainlessSteel>, <ore:pipeMediumStainlessSteel>, <ore:pipeMediumStainlessSteel>], 
 [<ore:blockLapis>, <ore:blockGlass>, <ore:blockLapis>]]);
 
+// dew point aggregator
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:97>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:97>, [[<ore:ingotAluminium>, <ore:circuitGood>, <ore:ingotAluminium>], 
+[<ore:paneGlass>, <ore:rotorAluminium>, <ore:paneGlass>], 
+[<ore:stickAluminium>, <ore:casingMachineAluminium>, <ore:stickAluminium>]]);
+
+// air pressure gun
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:98>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:98>, [[<ore:ingotAluminium>, <ore:plateAluminium>, <ore:ingotAluminium>], 
+[<ore:rotorAluminium>, <ore:craftingToolWrench>, <ore:springAluminium>], 
+[<ore:ingotAluminium>, <ore:casingMachineAluminium>, <ore:ingotAluminium>]]);
+
+// sonic borer
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:99>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:99>, [[<ore:ingotStainlessSteel>, <ore:ingotStainlessSteel>, null], 
+[<ore:barsIron>, <ore:rotorStainlessSteel>, <ore:pipeMediumStainlessSteel>], 
+[<ore:plateStainlessSteel>, <ore:casingMachineChromium>, <ore:plateStainlessSteel>]]);
+
+// fuel powered engine
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:100>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:100>, [[<ore:craftingToolWrench>, basinStainlessSteel, <ore:craftingToolScrewdriver>], 
+[<ore:cableGt08Gold>, <ore:rotorStainlessSteel>, <ore:screwStainlessSteel>], 
+[<ore:plateStainlessSteel>, <ore:casingMachineDoubleStainlessSteel>, <ore:plateStainlessSteel>]]);
+
+// filling station
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:101>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:101>, [[<ore:pipeMediumSteelGalvanized>, <ore:pipeMediumSteelGalvanized>, <ore:ingotSteelGalvanized>], 
+[<ore:cableGt04AnyCopper>, <ore:rotorSteelGalvanized>, <ore:casingMachineSteelGalvanized>], 
+[<ore:pipeMediumSteelGalvanized>, <ore:pipeMediumSteelGalvanized>, <ore:plateSteelGalvanized>]]);
+
+// belt hub
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:102>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:102>, [[<ore:ingotSteel>, <ore:craftingToolWrench>, <ore:ingotSteel>], 
+[<ore:springSteel>, <ore:gearGtSteel>, <ore:screwSteel>], 
+[motorLv, <ore:craftingToolScrewdriver>, motorLv]]);
+
+// van de graff generator
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:103>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:103>, [[<ore:ingotStainlessSteel>, <ore:gearGtStainlessSteel>, <ore:ingotStainlessSteel>], 
+[<ore:paneGlass>, <ore:circuitAdvanced>, <ore:paneGlass>], 
+[motorHv, <ore:casingMachineStainlessSteel>, motorHv]]);
+
+// defoliation machine
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:104>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:104>, [[<ore:pipeMediumGold>, <ore:craftingToolWrench>, <ore:pipeMediumGold>], 
+[pistonMv, <ore:pipeMediumGold>, pistonMv], 
+[motorHv, <ore:casingMachineAluminium>, motorHv]]);
+
+// lava smeltery
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:105>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:105>, [[<ore:plateTitanium>, crucibleLargeTitanium, <ore:plateTitanium>], 
+[crucibleLargeTitanium, smelterTitanium, crucibleLargeTitanium], 
+[<ore:plateTitanium>, burningBoxTitanium, <ore:plateTitanium>]]);
+
+// suction pipe
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:107>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:107> *3, [[<ore:stoneBrickNether>, <ore:pipeMediumStainlessSteel>, <ore:stoneBrickNether>], 
+[<ore:stoneBrickNether>, <ore:pipeMediumStainlessSteel>, <ore:stoneBrickNether>], 
+[<ore:stoneBrickNether>, <ore:pipeMediumStainlessSteel>, <ore:stoneBrickNether>]]);
+
+// rotational dynamo
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:108>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:108> *3, [[<ore:craftingToolWrench>, <ore:circuitGood>, <ore:craftingToolScrewdriver>], 
+[<ore:gearGtAluminium>, <ore:dustRedstone>, <ore:gearGtAluminium>], 
+[motorMv, <ore:casingMachineAluminium>, motorMv]]);
+
+// magnetostatic engine
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:109>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:109>, [[<ore:foilAluminium>, coilLargeCopper, <ore:foilSilver>], 
+[<ore:screwAluminium>, coilLargeCopper, <ore:craftingToolScrewdriver>], 
+[motorMv, <ore:casingMachineDoubleAluminium>, motorMv]]);
+
+// fluid crystallizer
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:110>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:110>, [[<ore:foilAluminium>, <RotaryCraft:rotarycraft_item_machine:74>, <ore:foilAluminium>], 
+[<RotaryCraft:rotarycraft_item_machine:74>, <ore:casingMachineAluminium>, <RotaryCraft:rotarycraft_item_machine:74>], 
+[motorMv, <ore:craftingToolHardHammer>, motorMv]]);
+
+// shaft power bus controller
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:111>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:111>, [[<ore:craftingToolWrench>, <ore:ringSteelGalvanized>, <ore:craftingToolScrewdriver>], 
+[<ore:ringSteelGalvanized>, <ore:casingMachineSteelGalvanized>, <ore:ringSteelGalvanized>], 
+[<ore:gearGtSteelGalvanized>, <ore:ringSteelGalvanized>, <ore:gearGtSteelGalvanized>]]);
+
+// shaft power bus
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:112>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:112>, [[<ore:craftingToolWrench>, <ore:ringSteelGalvanized>, <ore:craftingToolScrewdriver>], 
+[<ore:ringSteelGalvanized>, belt, <ore:ringSteelGalvanized>], 
+[<ore:stickSteelGalvanized>, <ore:ringSteelGalvanized>, <ore:stickSteelGalvanized>]]);
+
+// particle display
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:113>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:113>, [[<ore:ingotSilver>, <minecraft:dispenser>, <ore:ingotSilver>], 
+[<ore:craftingToolWrench>, <ore:circuitBasic>, <ore:springSteel>], 
+[<ore:ingotSilver>, <ore:ringSteel>, <ore:ingotSilver>]]);
+
+// ground sprinkler
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:114>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:114>, [[<ore:ingotAluminium>, motorMv, <ore:ingotAluminium>], 
+[<ore:craftingToolWrench>, <ore:pipeMediumAluminium>, <ore:craftingToolHardHammer>], 
+[<ore:plateAluminium>, <ore:rotorAluminium>, <ore:plateAluminium>]]);
 
 
+// pneumatic item pump
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:116>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:116> *8, [[<ore:plateSteel>, motorLv, <ore:plateSteel>], 
+[<ore:pipeMediumBrass>, <ore:rotorSteel>, <ore:pipeMediumBrass>],
+[<ore:plateSteel>, motorLv, <ore:plateSteel>]]);
+
+// refrigeration unit
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:118>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:118>, [[<ore:pipeMediumStainlessSteel>, motorHv, <ore:craftingToolWrench>], 
+[<ore:plateStainlessSteel>, freezerHv, <ore:plateStainlessSteel>],
+[<ore:rotorStainlessSteel>, thermoelectricCoolerHv, <ore:cableGt08Gold>]]);
+
+// fluid compression unit
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:119>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:119>, [[<ore:craftingToolScrewdriver>, motorHv, <ore:craftingToolWrench>], 
+[<ore:plateAluminium>, <ore:casingMachineAluminium>, <ore:screwAluminium>],
+[<ore:plateAluminium>, motorMv, <ore:plateAluminium>]]);
+
+// autocrafting unit
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:120>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:120>, [[<ore:craftingToolScrewdriver>, <gregtech:gt.multiitem.technological:1001>, <ore:craftingToolWrench>], 
+[<ore:plateTitanium>, autocrafterEv, <ore:screwTitanium>],
+[<ore:plateTitanium>, motorEv, <ore:plateTitanium>]]);
+
+// composter
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:121>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:121>, [[null, <ore:craftingToolScrewdriver>, null], 
+[motorMv, <ore:pipeMediumAluminium>, <ore:screwAluminium>],
+[<ore:plateAluminium>, <ore:casingMachineAluminium>, <ore:plateAluminium>]]);
+
+// anti-air gun
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:122>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:122>, [[<ore:craftingToolHardHammer>, <ore:circuitElite>, motorEv], 
+[<ore:pipeMediumAluminium>, <ore:pipeMediumAluminium>, <ore:rotorTitanium>],
+[null, <ore:casingMachineTitanium>, <ore:plateTitanium>]]);
+
+// pipe pump
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:123>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:123>, [[<ore:pipeMediumAluminium>, <ore:ingotAluminium>, <ore:pipeMediumAluminium>], 
+[<ore:pipeMediumAluminium>, <ore:rotorAluminium>, <ore:pipeMediumAluminium>],
+[pumpMv, <ore:casingMachineAluminium>, pumpMv]]);
+
+// chain drive
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:124>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:124>, [[<ore:ingotAluminium>, <ore:craftingToolWrench>, <ore:ingotAluminium>], 
+[<ore:springAluminium>, <ore:rotorAluminium>, <ore:screwAluminium>],
+[motorMv, <ore:craftingToolScrewdriver>, motorMv]]);
+
+// centrifuge
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:125>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:125>, [[<ore:circuitGood>, <ore:paneGlass>, <ore:craftingToolWrench>], 
+[<ore:rotorAluminium>, motorMv, <ore:rotorAluminium>],
+[motorMv, <ore:casingMachineAluminium>, motorMv]]);
+
+// bedrock pipe
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:126>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:126> , [[bedrockAlloyIngot, <ore:glassHardened>, bedrockAlloyIngot], 
+[bedrockAlloyIngot, motorIv, bedrockAlloyIngot],
+[bedrockAlloyIngot, <ore:glassHardened>, bedrockAlloyIngot]]);
+
+// drying bed
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:127>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:127> , [[<ore:platePolyvinylchloride>, <ore:glassHardened>, <ore:platePolyvinylchloride>], 
+[<ore:platePolyvinylchloride>, null, <ore:platePolyvinylchloride>],
+[<ore:ingotStainlessSteel>, <ore:casingMachineDoubleStainlessSteel>, <ore:ingotStainlessSteel>]]);
+
+// liquefaction machine
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:128>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:128> , [[<ore:plateAluminium>, null, <ore:plateAluminium>], 
+[<ore:glassHardened>, <ore:rotorAluminium>, <ore:glassHardened>],
+[<ore:plateSteelGalvanized>, <ore:casingMachineSteelGalvanized>, <ore:plateSteelGalvanized>]]);
+
+// block drop processor
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:129>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:129> , [[<ore:craftingToolWrench>, <ore:plateSteelGalvanized>, <ore:craftingToolHardHammer>], 
+[conveyorLv, <ore:rotorAluminium>, motorLv],
+[<ore:plateSteelGalvanized>, <ore:casingMachineSteelGalvanized>, <ore:plateSteelGalvanized>]]);
+
+// item filter
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:130>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:130> , [[<ore:craftingToolWrench>, screen, <ore:craftingToolHardHammer>], 
+[conveyorLv, <ore:circuitBasic>, conveyorLv],
+[<ore:plateSteel>, <ore:casingMachineSteel>, <ore:plateSteel>]]);
+
+// soil hydrator
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:131>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:131> , [[<ore:plateSteel>, <minecraft:ladder>, <ore:plateSteel>], 
+[<ore:plankWood>, null, <ore:plankWood>],
+[<ore:plateSteel>, <ore:plankWood>, <ore:plateSteel>]]);
+
+// block filler
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:132>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:132> , [[<ore:ingotSteel>, <ore:ingotSteel>, <ore:ingotSteel>], 
+[<ore:ingotSteel>, <minecraft:chest>, <ore:ingotSteel>],
+[<ore:ingotSteel>, motorLv, <ore:ingotSteel>]]);
+
+// gatling gun
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:133>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:133> , [[drumTitanium, drumTitanium, <ore:rotorTitanium>], 
+[null, <ore:rotorTitanium>, <ore:circuitElite>],
+[null, motorEv, <ore:plateDoubleTitanium>]]);
+
+// spillway
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:134>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:134> , [[<ore:pipeMediumSteelGalvanized>, null, null], 
+[<ore:plateSteelGalvanized>, <ore:pipeMediumSteelGalvanized>, <ore:plateSteelGalvanized>],
+[<ore:plateSteelGalvanized>, <ore:casingMachineSteelGalvanized>, <ore:plateSteelGalvanized>]]);
+
+// flamethrower turret
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:135>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:135> , [[<ore:pipeLargePolyvinylchloride>, igniterHv, <ore:pipeLargeStainlessSteel>], 
+[null, <ore:pipeLargePolyvinylchloride>, <ore:circuitAdvanced>],
+[null, <ore:pipeLargePolyvinylchloride>, <ore:casingMachineStainlessSteel>]]);
+
+// shaft distribution clutch
+recipes.remove(<RotaryCraft:rotarycraft_item_machine:137>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_machine:137> , [[<ore:craftingToolWrench>, <ore:gearGtSteel>, <ore:craftingToolHardHammer>], 
+[<ore:stickSteel>, <ore:casingMachineSteel>, <ore:stickSteel>],
+[<ore:plateSteel>, <ore:circuitBasic>, <ore:plateSteel>]]);
 
 
+// --- Power Generation ---
 
+// dc electric engine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine>, [[<ore:craftingToolWrench>, <ore:gearGtSteel>, <ore:craftingToolScrewdriver>], 
+[<ore:stickSteel>, motorLv, <ore:screwSteel>],
+[<ore:plateSteel>, <ore:casingMachineSteel>, <ore:plateSteel>]]);
 
+// wind turbine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:1>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:1>, [[<ore:stickAluminium>, <ore:rotorAluminium>, <ore:stickAluminium>], 
+[<ore:stickAluminium>, motorMv, <ore:stickAluminium>],
+[<ore:plateAluminium>, <ore:casingMachineDoubleAluminium>, <ore:plateAluminium>]]);
 
+// steam engine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:2>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:2>, [[<ore:cobblestone>, <ore:cobblestone>, <ore:cobblestone>], 
+[motorMv, motorMv, <ore:stickAluminium>],
+[<ore:plateAluminium>, steamEngineSteel, <ore:plateAluminium>]]);
 
+// gasoline engine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:3>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:3>, [[drumStainlessSteel, motorHv, drumStainlessSteel], 
+[igniterHv, motorHv, <ore:stickStainlessSteel>],
+[<ore:craftingToolWrench>, <ore:gearGtStainlessSteel>, pumpHv]]);
 
+// ac electric engine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:4>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:4>, [[<ore:craftingToolWrench>, coilLargeNichrome, <ore:craftingToolScrewdriver>], 
+[<ore:springAluminium>, coilLargeNichrome, <ore:screwAluminium>],
+[motorEv, <ore:casingMachineChromium>, motorEv]]);
 
+// performance engine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:5>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:5>, [[drumTitanium, motorIv, drumTitanium], 
+[igniterIv, motorIv, <ore:stickPlatinum>],
+[<ore:craftingToolWrench>, <ore:gearGtTitanium>, pumpIv]]);
 
+// hydrokinetic engine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:6>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:6>, [[paddlePanel, paddlePanel, paddlePanel], 
+[paddlePanel, motorIv, paddlePanel],
+[paddlePanel, paddlePanel, paddlePanel]]);
+
+// microturbine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:7>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:7>, [[<ore:wireGt08Graphene>, <ore:gearGtGraphene>, <ore:wireGt08Graphene>], 
+[motorLuV, <ore:gearGtGraphene>, motorLuV],
+[pumpLuV, <ore:casingMachineIridium>, pumpZpm]]);
+
+// gas turbine
+recipes.remove(<RotaryCraft:rotarycraft_item_engine:8>);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_engine:8>, [[<ore:wireGt08Superconductor>, <ore:gearGtOsmiridium>, <ore:wireGt08Superconductor>], 
+[motorZpm, <ore:gearGtGraphene>, motorZpm],
+[pumpZpm, <ore:casingMachineOsmium>, pumpZpm]]);
 
 
 // --- Dryer --- 
