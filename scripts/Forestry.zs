@@ -133,7 +133,7 @@ emptyCrate, emptyCrate, emptyCrate,
 emptyCrate, screwSteel, emptyCrate], 
 <minecraft:chest>, <Forestry:lepidopterology>);
 
-// --- Swarmer
+// alveary swarmer
 recipes.remove(<Forestry:alveary:2>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000, 
 [<Forestry:thermionicTubes:5>, foilGold, <Forestry:thermionicTubes:5>, 
@@ -141,7 +141,7 @@ mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000,
 <Forestry:thermionicTubes:5>, foilGold, <Forestry:thermionicTubes:5>], 
 <Forestry:alveary>, <Forestry:alveary:2>);
 
-// --- Alveary Fan
+// alveary fan
 recipes.remove(<Forestry:alveary:3>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000, 
 [<Forestry:thermionicTubes:11>, barsSteel, <Forestry:thermionicTubes:11>, 
@@ -149,7 +149,7 @@ barsSteel, rotorBronze, barsSteel,
 <Forestry:thermionicTubes:11>, motorMv, <Forestry:thermionicTubes:11>], 
 <Forestry:alveary>, <Forestry:alveary:3>);
 
-// --- Alveary Heater
+// alveary heater
 recipes.remove(<Forestry:alveary:4>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000, 
 [<Forestry:thermionicTubes:7>, barsSteel, <Forestry:thermionicTubes:7>, 
@@ -157,13 +157,13 @@ heater, heater, heater,
 <Forestry:thermionicTubes:7>, motorMv, <Forestry:thermionicTubes:7>], 
 <Forestry:alveary>, <Forestry:alveary:4>);
 
-// --- Alveary Hygroregulator
+// alveary hydroregulator
 recipes.remove(<Forestry:alveary:5>);
 mods.forestry.Carpenter.addRecipe(<Forestry:alveary:5>, [[<Forestry:thermionicTubes:6>, <ore:circuitGood>, <Forestry:thermionicTubes:6>], 
 [drumStainlessSteel, pipeMediumStainlessSteel, drumStainlessSteel], 
 [<Forestry:thermionicTubes:6>, plateRedAlloy, <Forestry:thermionicTubes:6>]], <liquid:for.honey> * 5000, 60,  <Forestry:alveary>);
 
-// --- Alveary Stabiliser
+// alveary stabilizer
 recipes.remove(<Forestry:alveary:6>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000, 
 [<Forestry:thermionicTubes:4>, robotArmMv, <Forestry:thermionicTubes:4>, 
@@ -171,7 +171,7 @@ itemFilter, <Forestry:beealyzer>, itemFilter,
 <Forestry:thermionicTubes:4>, robotArmMv, <Forestry:thermionicTubes:4>], 
 <Forestry:alveary>, <Forestry:alveary:6>);
 
-// --- Alveary Sieve
+// alveary sieve
 recipes.remove(<Forestry:alveary:7>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000, 
 [<Forestry:thermionicTubes:9>, <Forestry:craftingMaterial:3>, <Forestry:thermionicTubes:9>, 
@@ -179,21 +179,21 @@ mods.forestry.Carpenter.addRecipe(60, <liquid:for.honey> * 5000,
 <Forestry:thermionicTubes:9>, <Forestry:craftingMaterial:3>, <Forestry:thermionicTubes:9>], 
 <Forestry:alveary>, <Forestry:alveary:7>);
 
-// --- Beealyzer
+// beealyzer
 mods.forestry.Carpenter.removeRecipe(<Forestry:beealyzer>);
 mods.forestry.Carpenter.addRecipe(<Forestry:beealyzer>, [[screwAluminium, radarUnit, screwAluminium], 
 [itemCasingTin, <ore:circuitBasic>, itemCasingTin], 
 [screwAluminium, itemCasingTin, screwAluminium]], <liquid:molten.redstone> * 576, 60,  screen);
 recipes.addShapeless(<Forestry:beealyzer>, [<Forestry:beealyzer>]);
 
-// --- Treealyzer
+// treealyzer
 mods.forestry.Carpenter.removeRecipe(<Forestry:treealyzer>);
 mods.forestry.Carpenter.addRecipe(<Forestry:treealyzer>, [[screwAluminium, sonarUnit, screwAluminium], 
 [itemCasingCopper, <ore:circuitBasic>, itemCasingCopper], 
 [screwAluminium, itemCasingCopper, screwAluminium]], <liquid:molten.redstone> * 576, 60,  screen);
 recipes.addShapeless(<Forestry:treealyzer>, [<Forestry:treealyzer>]);
 														
-// --- Flutterlyzer
+// flutterlyzer
 mods.forestry.Carpenter.removeRecipe(<Forestry:flutterlyzer>);
 mods.forestry.Carpenter.addRecipe(<Forestry:flutterlyzer>, [[screwAluminium, radarUnit, screwAluminium], 
 [itemCasingCopper, <ore:circuitBasic>, itemCasingCopper], 
@@ -208,13 +208,13 @@ heater, <Forestry:sturdyMachine>, heater,
 screwSteel, motorLv, screwSteel], 
 <Forestry:factory2:2>, <Forestry:factory2>);
 
-// --- Rain Tank
+// rain tank
 recipes.remove(<Forestry:factory2:1>);
 recipes.addShaped(<Forestry:factory2:1>, [[<ore:plateIron>, <ore:ringIron>, <ore:plateIron>],
 [<ore:plateIron>, <ore:craftingToolHardHammer>, <ore:plateIron>],
 [<ore:plateIron>, <ore:ringIron>, <ore:plateIron>]]);
 
-// --- Work Table
+// work table
 recipes.remove(<Forestry:factory2:2>);
 recipes.addShaped(<Forestry:factory2:2>, [
 [<ore:screwIron>, <minecraft:bookshelf>, <ore:screwIron>],
@@ -389,8 +389,6 @@ itemCasingBronze, radarUnit, itemCasingBronze,
 screwBronze, itemCasingBronze, screwBronze],
 <minecraft:compass>, <Forestry:habitatLocator>);
 
-
-
 // basic circuit board
 mods.forestry.Carpenter.removeRecipe(<Forestry:chipsets>);
 mods.forestry.Carpenter.addRecipe(<Forestry:chipsets>, [[screwIron, foilIron, screwIron],
@@ -496,211 +494,211 @@ itemCasingCopper, <Forestry:thermionicTubes:10>, itemCasingCopper,
 screwSteel, itemCasingCopper, screwSteel], 
 <minecraft:quartz_block:2>, <Forestry:ffarm>.withTag({FarmBlock:10}) * 4);
 
-// --- Farm Gearbox
+// farm gearbox
 recipes.remove(<Forestry:ffarm:2>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>], 
 <Forestry:ffarm>.withTag({FarmBlock:0}), <Forestry:ffarm:2>.withTag({FarmBlock:0}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>], 
 <Forestry:ffarm>.withTag({FarmBlock:1}), <Forestry:ffarm:2>.withTag({FarmBlock:1}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>],  
 <Forestry:ffarm>.withTag({FarmBlock:2}), <Forestry:ffarm:2>.withTag({FarmBlock:2}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>], 
 <Forestry:ffarm>.withTag({FarmBlock:3}), <Forestry:ffarm:2>.withTag({FarmBlock:3}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>], 
 <Forestry:ffarm>.withTag({FarmBlock:4}), <Forestry:ffarm:2>.withTag({FarmBlock:4}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>],
 <Forestry:ffarm>.withTag({FarmBlock:5}), <Forestry:ffarm:2>.withTag({FarmBlock:5}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>],  
 <Forestry:ffarm>.withTag({FarmBlock:6}), <Forestry:ffarm:2>.withTag({FarmBlock:6}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>],  
 <Forestry:ffarm>.withTag({FarmBlock:7}), <Forestry:ffarm:2>.withTag({FarmBlock:7}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>], 
 <Forestry:ffarm>.withTag({FarmBlock:8}), <Forestry:ffarm:2>.withTag({FarmBlock:8}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>],  
 <Forestry:ffarm>.withTag({FarmBlock:9}), <Forestry:ffarm:2>.withTag({FarmBlock:9}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>, 
 gearSteel, motorLv, gearSteel, 
 <Forestry:thermionicTubes:2>, gearSteel, <Forestry:thermionicTubes:2>], 
 <Forestry:ffarm>.withTag({FarmBlock:10}), <Forestry:ffarm:2>.withTag({FarmBlock:10}) * 2);
 
-// --- Farm Hatch
+// farm hatch
 recipes.remove(<Forestry:ffarm:3>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>], 
 <Forestry:ffarm>.withTag({FarmBlock:0}), <Forestry:ffarm:3>.withTag({FarmBlock:0}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>], 
 <Forestry:ffarm>.withTag({FarmBlock:1}), <Forestry:ffarm:3>.withTag({FarmBlock:1}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>], 
 <Forestry:ffarm>.withTag({FarmBlock:2}), <Forestry:ffarm:3>.withTag({FarmBlock:2}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>], 
 <Forestry:ffarm>.withTag({FarmBlock:3}), <Forestry:ffarm:3>.withTag({FarmBlock:3}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>],  
 <Forestry:ffarm>.withTag({FarmBlock:4}), <Forestry:ffarm:3>.withTag({FarmBlock:4}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000,  
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>], 
 <Forestry:ffarm>.withTag({FarmBlock:5}), <Forestry:ffarm:3>.withTag({FarmBlock:5}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>],   
 <Forestry:ffarm>.withTag({FarmBlock:6}), <Forestry:ffarm:3>.withTag({FarmBlock:6}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>],  
 <Forestry:ffarm>.withTag({FarmBlock:7}), <Forestry:ffarm:3>.withTag({FarmBlock:7}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>],  
 <Forestry:ffarm>.withTag({FarmBlock:8}), <Forestry:ffarm:3>.withTag({FarmBlock:8}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000,  
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>],   
 <Forestry:ffarm>.withTag({FarmBlock:9}), <Forestry:ffarm:3>.withTag({FarmBlock:9}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:1>, gearSteel, <Forestry:thermionicTubes:1>, 
 conveyorLv, motorLv, conveyorLv, 
 <Forestry:thermionicTubes:1>, <minecraft:hopper>, <Forestry:thermionicTubes:1>], 
 <Forestry:ffarm>.withTag({FarmBlock:10}), <Forestry:ffarm:3>.withTag({FarmBlock:10}) * 2);
 
-// --- Farm Valve
+// farm valve
 recipes.remove(<Forestry:ffarm:4>);
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:0}), <Forestry:ffarm:4>.withTag({FarmBlock:0}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:1}), <Forestry:ffarm:4>.withTag({FarmBlock:1}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:2}), <Forestry:ffarm:4>.withTag({FarmBlock:2}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:3}), <Forestry:ffarm:4>.withTag({FarmBlock:3}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>],  
 <Forestry:ffarm>.withTag({FarmBlock:4}), <Forestry:ffarm:4>.withTag({FarmBlock:4}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:5}), <Forestry:ffarm:4>.withTag({FarmBlock:5}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>],   
 <Forestry:ffarm>.withTag({FarmBlock:6}), <Forestry:ffarm:4>.withTag({FarmBlock:6}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:7}), <Forestry:ffarm:4>.withTag({FarmBlock:7}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>],   
 <Forestry:ffarm>.withTag({FarmBlock:8}), <Forestry:ffarm:4>.withTag({FarmBlock:8}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>],   
 <Forestry:ffarm>.withTag({FarmBlock:9}), <Forestry:ffarm:4>.withTag({FarmBlock:9}) * 2);
-// -
+
 mods.forestry.Carpenter.addRecipe(60, <liquid:creosote> * 1000, 
 [<Forestry:thermionicTubes:11>, gearSteel, <Forestry:thermionicTubes:11>, 
 pumpLv, motorLv, pumpLv, 
 <Forestry:thermionicTubes:11>, ringRubber, <Forestry:thermionicTubes:11>], 
 <Forestry:ffarm>.withTag({FarmBlock:10}), <Forestry:ffarm:4>.withTag({FarmBlock:10}) * 2);
 
-// --- Farm Control
+// farm control
 recipes.remove(<Forestry:ffarm:5>);
 mods.forestry.Carpenter.addRecipe(<Forestry:ffarm:5>.withTag({FarmBlock:0}) * 2, [[<Forestry:thermionicTubes:4>, gearSteel, <Forestry:thermionicTubes:4>],
 [<ore:circuitBasic>, motorLv, <ore:circuitBasic>],
@@ -745,23 +743,3 @@ mods.forestry.Carpenter.addRecipe(<Forestry:ffarm:5>.withTag({FarmBlock:9}) * 2,
 mods.forestry.Carpenter.addRecipe(<Forestry:ffarm:5>.withTag({FarmBlock:10}) * 2, [[<Forestry:thermionicTubes:4>, gearSteel, <Forestry:thermionicTubes:4>],
 [<ore:circuitBasic>, motorLv, <ore:circuitBasic>],
 [<Forestry:thermionicTubes:4>, cableTin, <Forestry:thermionicTubes:4>]], <liquid:creosote> * 1000, 60,  <Forestry:ffarm>.withTag({FarmBlock:10}) * 2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
