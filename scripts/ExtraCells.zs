@@ -46,10 +46,12 @@ var formationPlane = <appliedenergistics2:item.ItemMultiPart:320>;
 
 // --- GT Variables ---
 var coverMachineStatus = <gregtech:gt.multiitem.technological:1002>;
-var processorCrystalDiamond = <gregtech:gt.multiitem.technological:30501>;
-var processorCrystalRuby = <gregtech:gt.multiitem.technological:30502>;
-var processorCrystalEmerald = <gregtech:gt.multiitem.technological:30503>;
-var processorCrystalSapphire = <gregtech:gt.multiitem.technological:30504>;
+
+var usbHv = <gregtech:gt.multiitem.technological:32001>;
+var usbEv = <gregtech:gt.multiitem.technological:32001>;
+var usbIv = <gregtech:gt.multiitem.technological:32001>;
+var usbLuV = <gregtech:gt.multiitem.technological:32001>;
+
 
 var plateLapis = <gregtech:gt.meta.plateGem:8332>;
 var plateStainlessSteel = <gregtech:gt.meta.plate:8636>;
@@ -301,25 +303,25 @@ MTUtilsGT.addCustomRecipe("gt.recipe.laminator", false, 120, 600, 0, [10000],
 // 256k storage component
 recipes.remove(<extracells:storage.component>);
 recipes.addShaped(<extracells:storage.component>, [[<ore:circuitElite>, <appliedenergistics2:item.ItemMultiMaterial:38>, <ore:circuitElite>], 
-[<appliedenergistics2:item.ItemMultiMaterial:38>, processorCrystalDiamond, <appliedenergistics2:item.ItemMultiMaterial:38>], 
+[<appliedenergistics2:item.ItemMultiMaterial:38>, usbHv, <appliedenergistics2:item.ItemMultiMaterial:38>], 
 [<ore:circuitElite>, <appliedenergistics2:item.ItemMultiMaterial:38>, <ore:circuitElite>]]);
 
 // 1024k storage component
 recipes.remove(<extracells:storage.component:1>);
 recipes.addShaped(<extracells:storage.component:1>, [[<ore:circuitMaster>, <extracells:storage.component>, <ore:circuitMaster>], 
-[<extracells:storage.component>, processorCrystalRuby, <extracells:storage.component>], 
+[<extracells:storage.component>, usbEv, <extracells:storage.component>], 
 [<ore:circuitMaster>, <extracells:storage.component>, <ore:circuitMaster>]]);
 
 // 4096k storage component
 recipes.remove(<extracells:storage.component:2>);
 recipes.addShaped(<extracells:storage.component:2>, [[<ore:circuitMaster>, <extracells:storage.component:1>, <ore:circuitMaster>], 
-[<extracells:storage.component:1>, processorCrystalEmerald, <extracells:storage.component:1>], 
+[<extracells:storage.component:1>, usbIv, <extracells:storage.component:1>], 
 [<ore:circuitMaster>, <extracells:storage.component:1>, <ore:circuitMaster>]]);
 
 // 16384k storage component
 recipes.remove(<extracells:storage.component:3>);
 recipes.addShaped(<extracells:storage.component:3>, [[<ore:circuitUltimate>, <extracells:storage.component:2>, <ore:circuitUltimate>], 
-[<extracells:storage.component:2>, processorCrystalSapphire, <extracells:storage.component:2>], 
+[<extracells:storage.component:2>, usbLuV, <extracells:storage.component:2>], 
 [<ore:circuitUltimate>, <extracells:storage.component:2>, <ore:circuitUltimate>]]);
 
 // 1k fluid storage component
@@ -361,7 +363,7 @@ recipes.addShaped(<extracells:storage.component:9>, [[<ore:circuitMaster>, <extr
 // 4096k fluid storage component
 recipes.remove(<extracells:storage.component:10>);
 recipes.addShaped(<extracells:storage.component:10>, [[<ore:circuitUltimate>, <extracells:storage.component:9>, <ore:circuitUltimate>], 
-[<extracells:storage.component:9>, processorCrystalDiamond, <extracells:storage.component:9>], 
+[<extracells:storage.component:9>, usbHv, <extracells:storage.component:9>], 
 [<ore:circuitUltimate>, <extracells:storage.component:9>, <ore:circuitUltimate>]]);
 
 // advanced storage housing

@@ -1,11 +1,12 @@
-// --- Created by Kehaan ---
+// --- Created by Prosbloom225 ---
 
 // --- Importing ---
+
 import mods.nei.NEI;
 import mods.MTUtilsGT;
-import mods.appeng.Inscriber;
 
-// RoC Vars
+
+// --- RoC Vars ---
 var radarUnit = <RotaryCraft:rotarycraft_item_borecraft:2>;
 var sonarUnit = <RotaryCraft:rotarycraft_item_borecraft:3>;
 var screen = <RotaryCraft:rotarycraft_item_borecraft:5>;
@@ -49,7 +50,7 @@ var heatRayBarrel = <RotaryCraft:rotarycraft_item_misccraft>;
 var heatRayCore = <RotaryCraft:rotarycraft_item_misccraft:3>;
 
 
-// GT Vars
+// ---GT Vars ---
 var boilerStrongTitanium = <gregtech:gt.multitileentity:1256>;
 
 var drumStainlessSteel = <gregtech:gt.multitileentity:32716>;
@@ -91,6 +92,11 @@ var crystalProcessorDiamond = <gregtech:gt.multiitem.technological:30501>;
 var crystalProcessorRuby = <gregtech:gt.multiitem.technological:30502>;
 var crystalProcessorEmerald = <gregtech:gt.multiitem.technological:30503>;
 var crystalProcessorSapphire = <gregtech:gt.multiitem.technological:30504>;
+
+var usbHv = <gregtech:gt.multiitem.technological:32001>;
+var usbEv = <gregtech:gt.multiitem.technological:32001>;
+var usbIv = <gregtech:gt.multiitem.technological:32001>;
+var usbLuV = <gregtech:gt.multiitem.technological:32001>;
 
 var motorUlv = <gregtech:gt.multiitem.technological:12000>;
 var motorLv = <gregtech:gt.multiitem.technological:12001>;
@@ -274,6 +280,7 @@ NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:55>);
 
 NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:64>);
 NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:70>);
+NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:71>);
 
 NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:112>);
 NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:118>);
@@ -313,6 +320,7 @@ NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:13>);
 NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:14>);
 NEI.hide(<RotaryCraft:rotarycraft_item_misccraft:15>);
 
+NEI.hide(<RotaryCraft:rotarycraft_item_borecraft>);
 NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:1>);
 NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:4>);
 NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:6>);
@@ -325,7 +333,7 @@ NEI.hide(<RotaryCraft:rotarycraft_item_borecraft:12>);
 
 
 
-// --- Removing Recipe Handlers ---
+// Removing Recipe Handlers
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:75>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:42>);
 NEI.hide(<RotaryCraft:rotarycraft_item_machine:63>);
@@ -333,7 +341,7 @@ NEI.hide(<RotaryCraft:rotarycraft_item_machine:63>);
 
 
 
-// --- Rebalance
+// --- Rebalance ---
 recipes.remove(<RotaryCraft:rotarycraft_item_meter>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_meter>, [[null, <ore:plankWood>, null], 
 [<ore:plankWood>, <minecraft:redstone:*>, <ore:plankWood>], 
@@ -1648,9 +1656,9 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_gearupgrade>, [[<ore:stickBedroc
 
 // handheld piston
 recipes.remove(<RotaryCraft:rotarycraft_item_heldpiston:32000>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_heldpiston:32000>, [[null, <ore:ingotStainlessSteel>, <minecraft:piston>], 
-[<ore:ingotStainlessSteel>, motorHv, <ore:ingotStainlessSteel>],
-[<ore:dustGlowstone>, <ore:ingotStainlessSteel>, null]]);
+recipes.addShaped(<RotaryCraft:rotarycraft_item_heldpiston:32000>, [[null, <ore:ingotSteel>, <minecraft:piston>], 
+[<ore:ingotSteel>, motorv, <ore:ingotSteel>],
+[<ore:dustGlowstone>, <ore:ingotSteel>, null]]);
 
 // bedrock grafter
 recipes.remove(<RotaryCraft:rotarycraft_item_bedgrafter>);
@@ -1660,7 +1668,7 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_bedgrafter>, [[null, null, bedro
 
 // spring-powered grafter
 recipes.remove(<RotaryCraft:rotarycraft_item_grafter:32000>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_bedgrafter>, [[null, null, <ore:ingotStainlessSteel>], 
+recipes.addShaped(<RotaryCraft:rotarycraft_item_grafter:32000>, [[null, null, <ore:ingotStainlessSteel>], 
 [<ore:ingotStainlessSteel>, <ore:stickWood>, null],
 [motorHv, <ore:ingotStainlessSteel>, null]]);
 
