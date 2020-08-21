@@ -407,15 +407,15 @@ MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 16, 100, 0, [10000],
 
 // turbine disk
 recipes.remove(<Railcraft:part.turbine.disk>);
-recipes.addShaped(<Railcraft:part.turbine.disk>, [[propeller, propeller, propeller], 
-[propeller, <ore:blockIngotStainlessSteel>, propeller], 
-[propeller, propeller, propeller]]);
+recipes.addShaped(<Railcraft:part.turbine.disk>, [[<ore:stickLongTungstenCarbide>, <ore:stickLongTungstenCarbide>, <ore:stickLongTungstenCarbide>], 
+[<ore:stickLongTungstenCarbide>, <ore:blockIngotStainlessSteel>, <ore:stickLongTungstenCarbide>], 
+[<ore:stickLongTungstenCarbide>, <ore:stickLongTungstenCarbide>, <ore:stickLongTungstenCarbide>]]);
 
 // turbine rotor
 recipes.remove(<Railcraft:part.turbine.rotor>);
-recipes.addShaped(<Railcraft:part.turbine.rotor>, [[turbineBlades, turbineBlades, turbineBlades], 
-[turbineBlades, <Railcraft:part.turbine.disk>, turbineBlades], 
-[turbineBlades, turbineBlades, turbineBlades]]);
+recipes.addShaped(<Railcraft:part.turbine.rotor>, [[null, <Railcraft:part.turbine.disk>, null], 
+[<Railcraft:part.turbine.disk>, <ore:craftingToolWrench>, <Railcraft:part.turbine.disk>], 
+[null, <Railcraft:part.turbine.disk>, null]]);
 
 // track layer cart
 recipes.remove(<Railcraft:cart.track.layer>);
