@@ -65,6 +65,7 @@ var spikesSteel = <gregtech:gt.block.spikes.sharp>;
 var logisticsWire = <gregtech:gt.multitileentity:24901>;
 var solarPanel = <gregtech:gt.multitileentity:10050>;
 var coverMachineStatus = <gregtech:gt.multiitem.technological:1002>;
+var stickLongStainlessSteel = <gregtech:gt.meta.stickLong:8636>;
 
 // tiered items
 var steamEngineSteel = <gregtech:gt.multitileentity:1304>;
@@ -1607,9 +1608,9 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_misccraft:3>, [[<minecraft:glows
 
 // propeller blade
 recipes.remove(<RotaryCraft:rotarycraft_item_misccraft:5>);
-recipes.addShaped(<RotaryCraft:rotarycraft_item_misccraft:5>, [[null, <ore:stickStainlessSteel>, null], 
-[null, <ore:ingotStainlessSteel>, null],
-[null, <ore:plateStainlessSteel>, null]]);
+MTUtilsGT.addCustomRecipe("gt.recipe.sharpener", false, 1024, 800, 0, [10000], 
+[stickLongStainlessSteel], [null], 
+[null], [<RotaryCraft:rotarycraft_item_misccraft:5>]);
 
 // radar unit
 recipes.remove(<RotaryCraft:rotarycraft_item_borecraft:2>);
