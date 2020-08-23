@@ -13,6 +13,9 @@ var barsTitanium = <gregtech:gt.block.bars.titanium>;
 
 var motorHv = <gregtech:gt.multiitem.technological:12003>;
 var motorZpm = <gregtech:gt.multiitem.technological:12007>;
+var sensorHv = <gregtech:gt.multiitem.technological:12143>;
+var emitterHv = <gregtech:gt.multiitem.technological:12123>;
+var pumpEv = <gregtech:gt.multiitem.technological:12024>;
 
 // --- Disables ---
 NEI.hide(<ReactorCraft:reactorcraft_item_crafting:18>);
@@ -22,10 +25,21 @@ NEI.hide(<ReactorCraft:reactorcraft_block_solenoidmulti>);
 // tritium lamps
 NEI.hide(<ReactorCraft:reactorcraft_item_placer:31>);
 recipes.remove(<ReactorCraft:reactorcraft_item_placer:31>);
-
+// heat pipe
+NEI.hide(<ReactorCraft:reactorcraft_item_placer:44>);
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:44>);
+//pressurizer
+NEI.hide(<ReactorCraft:reactorcraft_item_placer:13>);
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:13>);
 
 
 // --- Rebalance ---
+
+recipes.remove(<ReactorCraft:reactorcraft_item_book>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_book>, [[<ReactorCraft:reactorcraft_item_fluorite:*>, <ReactorCraft:reactorcraft_item_fluorite:*>, <ReactorCraft:reactorcraft_item_fluorite:*>], 
+[<minecraft:paper:*>, <minecraft:paper:*>, <minecraft:paper:*>], 
+[<minecraft:paper:*>, <minecraft:paper:*>, <minecraft:paper:*>]]);
+
 
 // --- Turbines ---
 
@@ -52,9 +66,9 @@ recipes.addShaped(<ReactorCraft:reactorcraft_block_turbinemulti:1>, [[<ore:plate
 
 // steam injector
 recipes.remove(<ReactorCraft:reactorcraft_block_turbinemulti:2>);
-recipes.addShaped(<ReactorCraft:reactorcraft_block_turbinemulti:2>, [[<ore:pipeMediumTungstenCarbide>, <ore:plateDenseTungstenCarbide>, <ore:pipeMediumTungstenCarbide>], 
-[<ore:plateDenseTungstenCarbide>, <ore:pipeMediumTungstenCarbide>, <ore:plateDenseTungstenCarbide>], 
-[<ore:pipeMediumTungstenCarbide>, <ore:plateDenseTungstenCarbide>, <ore:pipeMediumTungstenCarbide>]]);
+recipes.addShaped(<ReactorCraft:reactorcraft_block_turbinemulti:2>, [[<ore:pipeLargeTantalumHafniumCarbide>, <ore:plateDenseTungstenCarbide>, <ore:pipeLargeTantalumHafniumCarbide>], 
+[<ore:plateDenseTungstenCarbide>, <ore:craftingToolWrench>, <ore:plateDenseTungstenCarbide>], 
+[<ore:pipeLargeTantalumHafniumCarbide>, <ore:plateDenseTungstenCarbide>, <ore:pipeLargeTantalumHafniumCarbide>]]);
 
 // high-pressure turbine
 recipes.remove(<ReactorCraft:reactorcraft_item_placer:36>);
@@ -86,9 +100,10 @@ MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 8192, 400, 0, [10000],
 
 // steam bypass
 recipes.remove(<ReactorCraft:reactorcraft_block_generatormulti:3>);
-recipes.addShaped(<ReactorCraft:reactorcraft_block_generatormulti:3>, [[<ore:pipeMediumTitaniumNiobiumCarbide>, <ore:plateDenseTungstenCarbide>, <ore:pipeMediumTitaniumNiobiumCarbide>], 
-[<ore:plateDenseTungstenCarbide>, <ore:pipeMediumTitaniumNiobiumCarbide>, <ore:plateDenseTungstenCarbide>], 
-[<ore:pipeMediumTitaniumNiobiumCarbide>, <ore:plateDenseTungstenCarbide>, <ore:pipeMediumTitaniumNiobiumCarbide>]]);
+recipes.addShaped(<ReactorCraft:reactorcraft_block_generatormulti:3>, [[<ore:plateDenseTungstenCarbide>, <ore:pipeMediumTitaniumNiobiumCarbide>, <ore:plateDenseTungstenCarbide>], 
+[<ore:plateDenseTungstenCarbide>, <ore:craftingToolWrench>, <ore:plateDenseTungstenCarbide>], 
+[<ore:plateDenseTungstenCarbide>, <ore:pipeMediumTitaniumNiobiumCarbide>, <ore:plateDenseTungstenCarbide>]]);
+
 // turbine generator
 recipes.remove(<ReactorCraft:reactorcraft_item_placer:33>);
 MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 8192, 2400, 0, [10000], 
@@ -96,51 +111,107 @@ MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 8192, 2400, 0, [10000],
 [null], [<ReactorCraft:reactorcraft_item_placer:33>]);
 
 
-/*
 // -- flywheel
 
 // turbine flywheel core
-<ReactorCraft:reactorcraft_block_flywheelmulti>
-recipes.addShaped(<ReactorCraft:reactorcraft_block_flywheelmulti>, [[<RotaryCraft:rotarycraft_item_shaftcraft:1>, <RotaryCraft:rotarycraft_block_deco>, <RotaryCraft:rotarycraft_item_shaftcraft:1>], [<RotaryCraft:rotarycraft_block_deco>, <RotaryCraft:rotarycraft_item_gearcraft:69>, <RotaryCraft:rotarycraft_block_deco>], [<RotaryCraft:rotarycraft_item_shaftcraft:1>, <RotaryCraft:rotarycraft_block_deco>, <RotaryCraft:rotarycraft_item_shaftcraft:1>]]);
+recipes.remove(<ReactorCraft:reactorcraft_block_flywheelmulti>);
+MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 8192, 2400, 0, [10000], 
+[<gregtech:gt.meta.plateDense:730>, <gregtech:gt.meta.stickLong:8638> *8], [null], 
+[null], [<ReactorCraft:reactorcraft_block_flywheelmulti>]);
 
-<ReactorCraft:reactorcraft_block_flywheelmulti:1>
-<ReactorCraft:reactorcraft_block_flywheelmulti:2>
-<ReactorCraft:reactorcraft_item_placer:31>
+// flywheel vibration dampener
+recipes.remove(<ReactorCraft:reactorcraft_block_flywheelmulti:1>);
+MTUtilsGT.addCustomRecipe("gt.recipe.laminator", false, 2048, 1200, 0, [10000], 
+[<gregtech:gt.meta.storage.plate:8217>, <gregtech:gt.meta.plate:8638> *8], [null], 
+[null], [<ReactorCraft:reactorcraft_block_flywheelmulti:1>]);
+
+// turbine flywheel frame
+recipes.remove(<ReactorCraft:reactorcraft_block_flywheelmulti:2>);
+MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 2048, 200, 0, [10000], 
+[<gregtech:gt.meta.machine.double:8636>, <gregtech:gt.meta.stick:740> *8], [null], 
+[null], [<ReactorCraft:reactorcraft_block_flywheelmulti:2>]);
 
 
 // --- Reactor Shared ---
+
 // steam line
-<ReactorCraft:reactorcraft_item_placer:6>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:6>);
+MTUtilsGT.addCustomRecipe("gt.recipe.electrolyzer", false, 1024, 400, 0, [10000], 
+[<gregtech:gt.multitileentity:26642>, <gregtech:gt.meta.dust:9165> *8], [null], 
+[null], [<ReactorCraft:reactorcraft_item_placer:6>]);
+
 // gas duct
-<ReactorCraft:reactorcraft_item_placer:24>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:24>);
+MTUtilsGT.addCustomRecipe("gt.recipe.electrolyzer", false, 1024, 400, 0, [10000], 
+[<gregtech:gt.multitileentity:26182>, <gregtech:gt.meta.dust:9165> *8], [null], 
+[null], [<ReactorCraft:reactorcraft_item_placer:24>]);
+
 // steam boiler
-<ReactorCraft:reactorcraft_item_placer:11>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:11>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_placer:11>, [[<ore:plateDenseTungstenCarbide>, <ReactorCraft:reactorcraft_item_placer:6>, <ore:plateDenseTungstenCarbide>], 
+[<ore:craftingToolHardHammer>, <gregtech:gt.multitileentity:17206>, <ore:craftingToolWrench>], 
+[<ore:plateDenseTungstenCarbide>, <ore:pipeMediumTitaniumNiobiumCarbide>, <ore:plateDenseTungstenCarbide>]]);
+
 // steam grate
-<ReactorCraft:reactorcraft_item_placer:12>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:12>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_placer:12>, [[<ore:plateTantalumHafniumCarbide>, <gregtech:gt.block.bars.tungstensteel>, <ore:plateTantalumHafniumCarbide>], 
+[<ore:plateDenseTungstenCarbide>, <ReactorCraft:reactorcraft_item_placer:6>, <ore:plateDenseTungstenCarbide>], 
+[<ore:plateDenseTungstenCarbide>, <ReactorCraft:reactorcraft_item_placer:6>, <ore:plateDenseTungstenCarbide>]]);
+
 // heat exchanger
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:20>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_placer:20>, [[<ore:plateDenseTungstenCarbide>, <ore:plateDenseTungstenCarbide>, <ore:plateDenseTungstenCarbide>], 
+[<ore:pipeLargeTantalumHafniumCarbide>, <ore:casingMachineDoubleTungstenCarbide>, <ore:pipeLargeTitaniumNiobiumCarbide>], 
+[<ore:plateDenseTungstenCarbide>, <ore:plateDenseTungstenCarbide>, <ore:plateDenseTungstenCarbide>]]);
+
+
 // turbine dynamometer
-<ReactorCraft:reactorcraft_item_placer:35>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:35>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_placer:35>, [[<ore:plateStainlessSteel>, <ore:dustRedstone>, <ore:plateStainlessSteel>], 
+[<ore:circuitAdvanced>, <ore:casingMachineStainlessSteel>, <ore:circuitAdvanced>], 
+[sensorHv, <ore:casingMachineStainlessSteel>, emitterHv]]);
+
 // steam diffuser
-<ReactorCraft:reactorcraft_item_placer:37>
-// heat pipe
-<ReactorCraft:reactorcraft_item_placer:44>
-// hazmat suit
-<ReactorCraft:reactorcraft_item_hazboots>
-<ReactorCraft:reactorcraft_item_hazlegs>
-<ReactorCraft:reactorcraft_item_hazchest>
-<ReactorCraft:reactorcraft_item_hazhelmet>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:37>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_placer:37>, [[<ore:plateStainlessSteel>, <ore:plateStainlessSteel>, <ore:plateStainlessSteel>], 
+[<ore:plateTantalumHafniumCarbide>, pumpEv, <ore:plateTantalumHafniumCarbide>], 
+[<ore:plateStainlessSteel>, <ore:casingMachineTungstenCarbide>, <ore:plateStainlessSteel>]]);
+
 // geiger counter
-<ReactorCraft:reactorcraft_item_geiger>
+//recipes.remove(<ReactorCraft:reactorcraft_item_geiger>);
+//recipe.addShapeless(<ReactorCraft:reactorcraft_item_geiger>, [<gregtech:gt.multiitem.randomtools:10002>]);
+//recipe.addShapeless(<gregtech:gt.multiitem.randomtools:10002>, [<ReactorCraft:reactorcraft_item_geiger:*>]);
+
 // reactor cpu remote control
-<ReactorCraft:reactorcraft_item_remote>
+recipes.remove(<ReactorCraft:reactorcraft_item_remote>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_remote>, [[<ore:ingotStainlessSteel>, <appliedenergistics2:item.ItemMultiMaterial:41>, <ore:ingotStainlessSteel>], 
+[<minecraft:stone_button:*>, <ore:circuitAdvanced>, <minecraft:stone_button:*>], 
+[<minecraft:stone_button:*>, <ore:ingotStainlessSteel>, <minecraft:stone_button:*>]]);
+
 // radiation cleanup tool
-<ReactorCraft:reactorcraft_item_cleanup>
+recipes.remove(<ReactorCraft:reactorcraft_item_cleanup>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_cleanup>, [[null, <ore:ingotLead>, <RotaryCraft:rotarycraft_item_machine:17>], 
+[<ore:ingotLead>, <minecraft:water_bucket:*>, <ore:ingotLead>], 
+[<ore:ingotLead>, <ore:ingotLead>, null]]);
+
 // tokemak blueprint highlighter
-<ReactorCraft:reactorcraft_item_placer:34>
+recipes.remove(<ReactorCraft:reactorcraft_item_placer:34>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_placer:34>, [[null, <ore:glowstone>, null], 
+[<ore:circuitBasic>, <gregtech:gt.multiitem.randomtools:7010>, <ore:circuitBasic>], 
+[null, <RotaryCraft:rotarycraft_item_machine:52>, null]]);
+
 // radiation goggles
-<ReactorCraft:reactorcraft_item_goggles>
+recipes.remove(<ReactorCraft:reactorcraft_item_goggles>);
+recipes.addShapeless(<ReactorCraft:reactorcraft_item_goggles>, [<RotaryCraft:rotarycraft_item_iogoggles>, <RotaryCraft:rotarycraft_item_nvg:8192>, <minecraft:diamond_helmet>]);
+
+
 // magnetic ore finder
-<ReactorCraft:reactorcraft_item_ironfinder>
+recipes.remove(<ReactorCraft:reactorcraft_item_ironfinder>);
+recipes.addShaped(<ReactorCraft:reactorcraft_item_ironfinder>, [[<ReactorCraft:reactorcraft_item_raw:6>, null, <ReactorCraft:reactorcraft_item_raw:6>], 
+[<ore:ingotNeodymiumMagnetic>, null, <ore:ingotNeodymiumMagnetic>], 
+[<ore:ingotNeodymiumMagnetic>, <appliedenergistics2:tile.BlockSkyCompass>, <ore:ingotNeodymiumMagnetic>]]);
+/*
+
 // pressurizer
 <ReactorCraft:reactorcraft_item_placer:13>
 // condenser
