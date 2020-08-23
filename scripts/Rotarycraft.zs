@@ -224,6 +224,8 @@ NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:65>);
 NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:113>);
 
 // components
+NEI.hide(<RotaryCraft:rotarycraft_item_compacts:9>);
+recipes.remove(<RotaryCraft:rotarycraft_item_compacts:9>);
 NEI.hide(<RotaryCraft:rotarycraft_item_strongcoil:1>);
 NEI.hide(<RotaryCraft:rotarycraft_item_strongcoil:2>);
 NEI.hide(<RotaryCraft:rotarycraft_item_strongcoil:4>);
