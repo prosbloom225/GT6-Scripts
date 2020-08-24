@@ -224,6 +224,11 @@ NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:65>);
 NEI.hide(<RotaryCraft:rotarycraft_item_gearcraft:113>);
 
 // components
+NEI.hide(<RotaryCraft:rotarycraft_item_compacts:4>);
+NEI.hide(<RotaryCraft:rotarycraft_item_compacts:5>);
+NEI.hide(<RotaryCraft:rotarycraft_item_compacts:7>);
+NEI.hide(<RotaryCraft:rotarycraft_item_compacts:11>);
+NEI.hide(<RotaryCraft:rotarycraft_item_compacts:12>);
 NEI.hide(<RotaryCraft:rotarycraft_item_compacts:9>);
 recipes.remove(<RotaryCraft:rotarycraft_item_compacts:9>);
 NEI.hide(<RotaryCraft:rotarycraft_item_strongcoil:1>);
@@ -438,8 +443,15 @@ recipes.addShaped(<RotaryCraft:rotarycraft_item_strongcoil>, [[<ore:ingotHSLASpr
 
 recipes.remove(<RotaryCraft:rotarycraft_item_jetpack>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_jetpack>, [[<minecraft:fire_charge>, drumTitanium, <minecraft:fire_charge>], 
-[<ore:gear>, <ore:circuitElite>, <ore:gearGtSteel>], 
-[<ore:plateCurvedSteel>, boilerStrongTitanium, <ore:plateCurvedSteel>]]);
+[<ore:gearGtAluminium>, <ore:circuitElite>, <ore:gearGtAluminium>], 
+[<ore:plateCurvedAluminium>, boilerStrongTitanium, <ore:plateCurvedAluminium>]]);
+
+// bedrock jetpack
+recipes.remove(<RotaryCraft:rotarycraft_item_bedpack>);
+MTUtilsGT.addCustomRecipe("gt.recipe.welder", false, 512, 400, 0, [10000], 
+[<RotaryCraft:rotarycraft_item_bedchest>, <RotaryCraft:rotarycraft_item_jetpack>], [null], 
+[null], [<RotaryCraft:rotarycraft_item_bedpack>]);
+
 
 recipes.remove(<RotaryCraft:rotarycraft_item_pump>);
 recipes.addShaped(<RotaryCraft:rotarycraft_item_pump:32000>, [[null, <ore:ingotStainlessSteel>, <ore:pipeMediumStainlessSteel>], 
@@ -1595,6 +1607,13 @@ recipes.addShaped(gear16Bedrock, [[null, gear08Bedrock, <ore:stickBedrock>],
 [null, null, null]]);
 
 // --- Components ---
+
+// bedrock ingot
+recipes.remove(<RotaryCraft:rotarycraft_item_compacts:3>);
+MTUtilsGT.addCustomRecipe("gt.recipe.nanofab", false, 8192, 9999, 0, [10000], 
+[<gregtech:gt.meta.ingot:8635>, <RotaryCraft:rotarycraft_item_powders:4> *8], [null], 
+[null], [<RotaryCraft:rotarycraft_item_compacts:3>]);
+
 
 // heat ray barrel
 recipes.remove(<RotaryCraft:rotarycraft_item_misccraft>);
